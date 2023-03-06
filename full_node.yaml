@@ -1,0 +1,10 @@
+/controller_stopper
+/move_group
+/robot_state_publisher
+/ros_control_controller_spawner
+/ros_control_stopped_spawner
+/rosout
+/rqt_gui_py_node_24948
+/rviz_takikoi_Inspiron_7501_17014_7653407952365585568
+/ur_hardware_interface
+/ur_hardware_interface/ur_robot_state_helper
