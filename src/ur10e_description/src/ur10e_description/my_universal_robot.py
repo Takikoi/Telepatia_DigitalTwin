@@ -26,4 +26,4 @@ class MyUniversalRobot:
 
     def update_wrench_stream(self, stream_file_path):
         with io.open(stream_file_path, 'w') as f:
-            f.write(json.dumps(self.wrench_state, indent=2))
+            f.write(json.dumps(self.wrench_state["wrench"], indent=2))

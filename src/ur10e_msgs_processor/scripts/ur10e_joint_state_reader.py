@@ -1,6 +1,7 @@
 import rospy
 from control_msgs.msg import JointTrajectoryControllerState
-from geometry_msgs.msg import Wrench
+from geometry_msgs.msg import WrenchStamped
+from sensor_msgs.msg import JointState
 from rospy_message_converter import json_message_converter
 from ur10e_description import my_universal_robot as UR
 
@@ -19,8 +20,8 @@ def callback_wrench(data):
 
 def subscriber():
     rospy.init_node("ur10e_joint_state_reader" , anonymous=True)
-    rospy.Subscriber("/scaled_pos_joint_traj_controller/state", JointTrajectoryControllerState, callback_pos)
-    rospy.Subscriber("/wrench", Wrench, callback_wrench)
+    rospy.Subscriber("/joint_states", JointState, callback_pos)
+    rospy.Subscriber("/wrench", WrenchStamped, callback_wrench)
     rospy.spin()
 
 if __name__ == '__main__':
